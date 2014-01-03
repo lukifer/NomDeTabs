@@ -1,0 +1,55 @@
+{
+	"manifest_version": 2,
+
+	"name": "Nom de Tabs",
+	"version": "1.0",
+	"author": "Luke Dennis",
+	"homepage_url": "http://lukifer.net/nomdetabs",
+
+	"description": "Tabs: Know Thyself",
+
+	"icons": {
+		"16": "nom_shield16.png",
+		"19": "nom_shield19.png",
+		"38": "nom_shield38.png",
+		"64": "nom_shield64.png",
+		"128":"nom_shield128.png"
+	},
+
+	"background": {
+		"persistent": false,
+		"scripts": ["nom.js", "bg.js"]
+	},
+	"options_page": "options.html",
+
+	"browser_action": {
+		"default_icon": {
+			"16": "nom_shield16.png",
+			"19": "nom_shield19.png",
+			"38": "nom_shield38.png",
+			"64": "nom_shield64.png",
+			"128":"nom_shield128.png"
+		},
+		"default_title": "Nom de Tabs",
+		"default_popup": "popup_browser.html"
+	},
+
+	"omnibox": {
+		"keyword": "nom"
+	},
+
+	"offline_enabled": true,
+	"permissions": [
+		"http://*/",
+		"https://*/",
+		"file:///*/",
+		"<all_urls>",
+		"tabs",
+		"activeTab",
+		"sessions",
+		"idle",
+		"contextMenus",
+		"history",
+		"unlimitedStorage"
+	]
+}
