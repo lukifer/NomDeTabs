@@ -52,8 +52,9 @@ chrome.tabs.onActivated.addListener(function(info)
 	var nom = noms[windowId];
 
 	// test
-	if(!nom) nom = "NONE";
+	//if(!nom) nom = "NONE";
 
+	if(nom)
 	chrome.windows.get(windowId, {"populate": true}, function(win)
 	{
 		if(win.tabs && win.tabs.length)
@@ -96,4 +97,43 @@ chrome.tabs.onActivated.addListener(function(info)
 
 
 }); // end tabs.onActivated
+
+
+
+function contextMenuClick(clickData, tab)
+{
+
+}
+
+var contextMenuDetails = {
+	"id":		"pants",
+	"title":	"pants",
+	"type":		"radio",
+	"checked":	true,
+	"contexts":	["all"],
+	"onclick":	contextMenuClick
+};
+
+//chrome.contextMenus.create(contextMenuDetails, function(generatedId){ alert(generatedId); });
+//chrome.contextMenus.create(contextMenuDetails);
+
+
+/*
+contextMenuDetails.id = "pants2";
+contextMenuDetails.title = "pants2";
+contextMenuDetails.checked = false;
+*/
+
+var contextMenuDetails2 = {
+	"id":		"pants2",
+	"title":	"pants2",
+	"type":		"radio",
+	"checked":	false,
+	"contexts":	["all"],
+	"onclick":	contextMenuClick
+};
+
+
+//chrome.contextMenus.create(contextMenuDetails2, function(generatedId){ alert(generatedId); });
+//chrome.contextMenus.create(contextMenuDetails2);
 
